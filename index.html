@@ -1,0 +1,1021 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>3학년 과학 - 소리의 성질 단원 마무리 평가</title>
+  <style>
+    :root {
+      --primary: #10b981;
+      --primary-dark: #059669;
+      --primary-light: #d1fae5;
+      --blue: #3b82f6;
+      --blue-light: #eff6ff;
+      --amber: #f59e0b;
+      --amber-light: #fef3c7;
+      --bg: #f8fafc;
+      --card: #ffffff;
+      --text: #1e293b;
+      --muted: #64748b;
+      --border: #e2e8f0;
+      --danger: #ef4444;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Malgun Gothic', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      padding: 20px 16px 60px;
+    }
+
+    .container {
+      max-width: 820px;
+      margin: 0 auto;
+    }
+
+    header {
+      background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+      color: #ffffff;
+      border-radius: 20px;
+      padding: 28px 24px;
+      margin-bottom: 24px;
+      box-shadow: 0 10px 25px rgba(16, 185, 129, 0.2);
+    }
+
+    header .badge {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.22);
+      padding: 4px 12px;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    header h1 {
+      font-size: 1.65rem;
+      margin-bottom: 6px;
+    }
+
+    header p {
+      font-size: 0.95rem;
+      opacity: 0.95;
+    }
+
+    .student-info {
+      background: var(--card);
+      border: 2px solid var(--border);
+      border-radius: 16px;
+      padding: 18px 20px;
+      margin-bottom: 24px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 12px;
+    }
+
+    .student-info label {
+      display: flex;
+      flex-direction: column;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--muted);
+      gap: 6px;
+    }
+
+    .student-info input {
+      padding: 10px 12px;
+      border: 1.5px solid var(--border);
+      border-radius: 10px;
+      font-size: 1rem;
+      color: var(--text);
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .student-info input:focus {
+      border-color: var(--primary);
+    }
+
+    .q-card {
+      background: var(--card);
+      border: 1.5px solid var(--border);
+      border-radius: 20px;
+      padding: 24px;
+      margin-bottom: 22px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+    }
+
+    .q-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 14px;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .q-num-wrap {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .q-num {
+      font-size: 1.45rem;
+      font-weight: 800;
+      color: var(--primary-dark);
+    }
+
+    .q-tag {
+      background: var(--primary-light);
+      color: var(--primary-dark);
+      font-size: 0.8rem;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 999px;
+    }
+
+    .q-page {
+      font-size: 0.82rem;
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    .q-title {
+      font-size: 1.12rem;
+      font-weight: 700;
+      margin-bottom: 18px;
+      word-break: keep-all;
+    }
+
+    /* 1번 스타일 */
+    .illust-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 18px;
+    }
+
+    .illust-box {
+      background: #f8fafc;
+      border: 1.5px solid var(--border);
+      border-radius: 14px;
+      padding: 16px;
+      text-align: center;
+    }
+
+    .illust-box span {
+      display: block;
+      margin-top: 8px;
+      font-weight: 700;
+      font-size: 0.92rem;
+      color: #334155;
+    }
+
+    .blank-box {
+      background: #f1f5f9;
+      border: 2px dashed #94a3b8;
+      border-radius: 14px;
+      padding: 18px;
+      text-align: center;
+      font-size: 1.1rem;
+      font-weight: 700;
+    }
+
+    .blank-input {
+      width: 120px;
+      padding: 8px 12px;
+      margin: 0 6px;
+      border: 2px solid var(--primary);
+      border-radius: 10px;
+      font-size: 1.1rem;
+      font-weight: 700;
+      text-align: center;
+      background: #ffffff;
+    }
+
+    /* 2번 스타일 */
+    .choice-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .choice-btn {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      width: 100%;
+      text-align: left;
+      padding: 14px 16px;
+      background: #f8fafc;
+      border: 2px solid var(--border);
+      border-radius: 14px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.15s;
+      color: var(--text);
+    }
+
+    .choice-btn:hover {
+      border-color: var(--primary);
+      background: #f0fdf4;
+    }
+
+    .choice-btn.selected {
+      border-color: var(--primary-dark);
+      background: var(--primary-light);
+      font-weight: 700;
+    }
+
+    .choice-circle {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background: #ffffff;
+      border: 1.5px solid #cbd5e1;
+      font-weight: 800;
+      flex-shrink: 0;
+    }
+
+    .choice-btn.selected .choice-circle {
+      background: var(--primary-dark);
+      color: #ffffff;
+      border-color: var(--primary-dark);
+    }
+
+    /* 3번 칼림바 스타일 */
+    .kalimba-wrap {
+      background: #fffbeb;
+      border: 2px solid #fde68a;
+      border-radius: 16px;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .kalimba-board {
+      position: relative;
+      max-width: 420px;
+      margin: 0 auto 18px;
+      background: linear-gradient(180deg, #d97706 0%, #b45309 100%);
+      border-radius: 18px 18px 28px 28px;
+      padding: 24px 18px 34px;
+      box-shadow: inset 0 2px 8px rgba(255,255,255,0.3), 0 6px 14px rgba(180, 83, 9, 0.25);
+    }
+
+    .kalimba-bridge {
+      height: 10px;
+      background: #fef3c7;
+      border-radius: 4px;
+      margin-bottom: 4px;
+    }
+
+    .kalimba-tines {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 7px;
+      height: 155px;
+    }
+
+    .tine {
+      width: 16px;
+      background: linear-gradient(90deg, #e2e8f0, #ffffff, #cbd5e1);
+      border-radius: 0 0 8px 8px;
+      box-shadow: 0 3px 5px rgba(0,0,0,0.25);
+      transition: transform 0.15s, background 0.15s;
+    }
+
+    .tine.target {
+      cursor: pointer;
+      border: 2px solid #1e293b;
+      position: relative;
+    }
+
+    .tine.target.active {
+      background: linear-gradient(90deg, #6ee7b7, #10b981, #059669);
+      transform: scale(1.06);
+      border-color: #ffffff;
+    }
+
+    .kalimba-btns {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+    }
+
+    .k-btn {
+      padding: 12px 28px;
+      border-radius: 12px;
+      border: 2px solid var(--border);
+      background: #ffffff;
+      font-size: 1.05rem;
+      font-weight: 800;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+
+    .k-btn.selected {
+      background: var(--primary-dark);
+      color: #ffffff;
+      border-color: var(--primary-dark);
+    }
+
+    /* 4번 사다리타기 스타일 */
+    .ladder-container {
+      background: #f0f9ff;
+      border: 1.5px solid #bae6fd;
+      border-radius: 16px;
+      padding: 18px;
+    }
+
+    .step-label {
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: #0369a1;
+      margin-bottom: 10px;
+    }
+
+    .ladder-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      text-align: center;
+    }
+
+    .ladder-node {
+      padding: 12px 8px;
+      border-radius: 12px;
+      background: #ffffff;
+      border: 2px solid #cbd5e1;
+      font-weight: 800;
+      font-size: 1.05rem;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+
+    .ladder-node.selected {
+      background: #0284c7;
+      color: #ffffff;
+      border-color: #0369a1;
+    }
+
+    .ladder-svg {
+      width: 100%;
+      height: 120px;
+      display: block;
+    }
+
+    /* 5번 과학 글쓰기 스타일 */
+    .situation-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+
+    .sit-card {
+      background: #f8fafc;
+      border: 2px solid var(--border);
+      border-radius: 14px;
+      padding: 14px 10px;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+
+    .sit-card:hover {
+      border-color: var(--amber);
+    }
+
+    .sit-card.selected {
+      border-color: #d97706;
+      background: var(--amber-light);
+      font-weight: 800;
+    }
+
+    .sit-emoji {
+      font-size: 2.2rem;
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    .writing-box {
+      background: #fffbeb;
+      border: 1.5px solid #fde68a;
+      border-radius: 14px;
+      padding: 18px;
+      margin-bottom: 14px;
+    }
+
+    .writing-box p {
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .inline-tag {
+      display: inline-block;
+      min-width: 110px;
+      padding: 2px 10px;
+      border-bottom: 2px solid #d97706;
+      color: #b45309;
+      text-align: center;
+      font-weight: 800;
+    }
+
+    textarea {
+      width: 100%;
+      min-height: 85px;
+      padding: 12px;
+      border: 1.5px solid #cbd5e1;
+      border-radius: 10px;
+      font-family: inherit;
+      font-size: 0.98rem;
+      resize: vertical;
+      background: #ffffff;
+    }
+
+    textarea:focus {
+      outline: none;
+      border-color: var(--primary);
+    }
+
+    /* 제출 버튼 */
+    .submit-area {
+      text-align: center;
+      margin-top: 28px;
+    }
+
+    .btn-submit {
+      background: var(--primary-dark);
+      color: #ffffff;
+      border: none;
+      padding: 16px 40px;
+      font-size: 1.15rem;
+      font-weight: 800;
+      border-radius: 14px;
+      cursor: pointer;
+      box-shadow: 0 8px 20px rgba(5, 150, 105, 0.25);
+      transition: transform 0.15s, background 0.15s;
+    }
+
+    .btn-submit:hover:not(:disabled) {
+      background: #047857;
+      transform: translateY(-2px);
+    }
+
+    .btn-submit:disabled {
+      background: #94a3b8;
+      cursor: not-allowed;
+      box-shadow: none;
+    }
+
+    /* DB 상태 알림 배지 */
+    .db-status {
+      display: inline-block;
+      margin-top: 8px;
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-size: 0.88rem;
+      font-weight: 700;
+    }
+
+    .db-status.success {
+      background: #dcfce7;
+      color: #166534;
+      border: 1px solid #86efac;
+    }
+
+    .db-status.error {
+      background: #fee2e2;
+      color: #991b1b;
+      border: 1px solid #fca5a5;
+    }
+
+    /* 채점 및 제출 결과 영역 */
+    #resultPanel {
+      display: none;
+      margin-top: 32px;
+      background: #ffffff;
+      border: 2.5px solid var(--primary);
+      border-radius: 20px;
+      padding: 26px;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+    }
+
+    .score-banner {
+      background: var(--primary-light);
+      border-radius: 14px;
+      padding: 20px;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .score-banner h2 {
+      color: var(--primary-dark);
+      font-size: 1.5rem;
+      margin-bottom: 6px;
+    }
+
+    .feedback-item {
+      padding: 14px 16px;
+      border-radius: 12px;
+      margin-bottom: 12px;
+      border: 1px solid var(--border);
+      background: #f8fafc;
+    }
+
+    .feedback-item.correct {
+      border-left: 5px solid #10b981;
+    }
+
+    .feedback-item.wrong {
+      border-left: 5px solid #ef4444;
+    }
+
+    .feedback-item.essay {
+      border-left: 5px solid #f59e0b;
+      background: #fffbeb;
+    }
+
+    .action-btns {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: center;
+      margin-top: 22px;
+    }
+
+    .btn-secondary {
+      padding: 12px 20px;
+      border-radius: 10px;
+      border: 1.5px solid #cbd5e1;
+      background: #ffffff;
+      font-weight: 700;
+      cursor: pointer;
+      font-size: 0.95rem;
+    }
+
+    .btn-secondary:hover {
+      background: #f1f5f9;
+    }
+
+    @media (max-width: 600px) {
+      .illust-row, .situation-grid { grid-template-columns: 1fr; }
+    }
+
+    @media print {
+      .btn-submit, .action-btns { display: none !important; }
+      body { background: #ffffff; padding: 0; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <span class="badge">초등학교 3학년 과학 · 소리의 성질</span>
+      <h1>단원 마무리 확인 평가</h1>
+      <p>1번부터 5번까지 문제를 모두 푼 뒤 아래의 <strong>[제출 및 채점하기]</strong> 버튼을 눌러주세요.</p>
+    </header>
+
+    <!-- 학생 정보 -->
+    <section class="student-info" aria-label="학생 정보 입력">
+      <label>학년
+        <input type="text" id="stGrade" value="3" placeholder="예: 3">
+      </label>
+      <label>반
+        <input type="text" id="stClass" placeholder="예: 1">
+      </label>
+      <label>번호
+        <input type="text" id="stNumber" placeholder="예: 15">
+      </label>
+      <label>이름
+        <input type="text" id="stName" placeholder="이름을 입력하세요">
+      </label>
+    </section>
+
+    <!-- 1번 문항 -->
+    <article class="q-card">
+      <div class="q-header">
+        <div class="q-num-wrap">
+          <span class="q-num">1</span>
+          <span class="q-tag">과학적 탐구</span>
+        </div>
+        <span class="q-page">교과서 62쪽~63쪽</span>
+      </div>
+      <p class="q-title">소리가 나는 종과 트라이앵글을 관찰하고 물체에서 소리가 날 때의 공통점을 설명하려 합니다. ( &nbsp;&nbsp; ) 안에 들어갈 알맞은 말을 써 봅시다.</p>
+
+      <div class="illust-row">
+        <div class="illust-box">
+          <svg width="90" height="72" viewBox="0 0 100 80">
+            <rect x="20" y="64" width="60" height="10" rx="4" fill="#475569"/>
+            <path d="M26 64 C26 32, 74 32, 74 64 Z" fill="#cbd5e1" stroke="#64748b" stroke-width="2"/>
+            <rect x="46" y="24" width="8" height="12" fill="#94a3b8"/>
+            <circle cx="50" cy="22" r="5" fill="#475569"/>
+            <path d="M18 42 Q12 50 18 58 M82 42 Q88 50 82 58" stroke="#ef4444" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+          </svg>
+          <span>소리가 나는 종</span>
+        </div>
+        <div class="illust-box">
+          <svg width="90" height="72" viewBox="0 0 100 80">
+            <polygon points="50,14 20,66 80,66" fill="none" stroke="#64748b" stroke-width="4" stroke-linejoin="round"/>
+            <line x1="62" y1="48" x2="92" y2="36" stroke="#94a3b8" stroke-width="3.5" stroke-linecap="round"/>
+            <path d="M24 38 Q16 44 18 54 M76 38 Q84 44 82 54" stroke="#ef4444" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+          </svg>
+          <span>소리가 나는 트라이앵글</span>
+        </div>
+      </div>
+
+      <div class="blank-box">
+        소리가 나는 물체는 ( <input type="text" id="q1Input" class="blank-input" placeholder="정답 입력" autocomplete="off"> )이/가 있다.
+      </div>
+    </article>
+
+    <!-- 2번 문항 -->
+    <article class="q-card">
+      <div class="q-header">
+        <div class="q-num-wrap">
+          <span class="q-num">2</span>
+          <span class="q-tag">과학적 탐구</span>
+        </div>
+        <span class="q-page">교과서 64쪽~65쪽</span>
+      </div>
+      <p class="q-title">작은북을 치는 세기를 다르게 하면서 관찰한 결과로 옳은 것을 보기에서 골라 기호를 선택해 봅시다.</p>
+
+      <div class="choice-list" id="q2Choices">
+        <button type="button" class="choice-btn" data-val="㉠">
+          <span class="choice-circle">㉠</span>
+          <span>작은북을 치는 세기와 관계없이 같은 세기의 소리가 난다.</span>
+        </button>
+        <button type="button" class="choice-btn" data-val="㉡">
+          <span class="choice-circle">㉡</span>
+          <span>작은북을 세게 치면 북면이 크게 떨리면서 작은 소리가 난다.</span>
+        </button>
+        <button type="button" class="choice-btn" data-val="㉢">
+          <span class="choice-circle">㉢</span>
+          <span>작은북을 약하게 치면 북면이 작게 떨리면서 작은 소리가 난다.</span>
+        </button>
+      </div>
+    </article>
+
+    <!-- 3번 문항 -->
+    <article class="q-card">
+      <div class="q-header">
+        <div class="q-num-wrap">
+          <span class="q-num">3</span>
+          <span class="q-tag">문제 해결</span>
+        </div>
+        <span class="q-page">교과서 66쪽~67쪽</span>
+      </div>
+      <p class="q-title">칼림바로 낼 수 있는 가장 낮은 소리를 내려고 합니다. 칼림바에서 연주해야 하는 음판의 기호를 골라 봅시다.</p>
+
+      <div class="kalimba-wrap">
+        <div class="kalimba-board">
+          <div class="kalimba-bridge"></div>
+          <div class="kalimba-tines">
+            <div class="tine target" id="tineA" data-val="㉠" style="height: 62px;" title="㉠ 짧은 음판"></div>
+            <div class="tine" style="height: 76px;"></div>
+            <div class="tine" style="height: 92px;"></div>
+            <div class="tine" style="height: 108px;"></div>
+            <div class="tine" style="height: 124px;"></div>
+            <div class="tine target" id="tineB" data-val="㉡" style="height: 142px;" title="㉡ 가장 긴 음판"></div>
+            <div class="tine" style="height: 128px;"></div>
+            <div class="tine" style="height: 112px;"></div>
+            <div class="tine" style="height: 96px;"></div>
+            <div class="tine" style="height: 80px;"></div>
+            <div class="tine" style="height: 66px;"></div>
+          </div>
+        </div>
+
+        <div class="kalimba-btns">
+          <button type="button" class="k-btn" data-val="㉠">㉠ (짧은 음판)</button>
+          <button type="button" class="k-btn" data-val="㉡">㉡ (가장 긴 음판)</button>
+        </div>
+      </div>
+    </article>
+
+    <!-- 4번 문항 -->
+    <article class="q-card">
+      <div class="q-header">
+        <div class="q-num-wrap">
+          <span class="q-num">4</span>
+          <span class="q-tag">과학적 탐구</span>
+        </div>
+        <span class="q-page">교과서 68쪽~69쪽</span>
+      </div>
+      <p class="q-title">바닷속에서 잠수부에게 배의 소리를 전달하는 물질을 고른 뒤, 사다리를 따라갔을 때 나오는 물질의 상태를 선택해 봅시다.</p>
+
+      <div class="ladder-container">
+        <p class="step-label">① 소리를 전달하는 물질을 먼저 클릭하세요:</p>
+        <div class="ladder-grid" id="q4Top">
+          <button type="button" class="ladder-node" data-top="물">물</button>
+          <button type="button" class="ladder-node" data-top="공기">공기</button>
+          <button type="button" class="ladder-node" data-top="나무">나무</button>
+        </div>
+
+        <!-- 사다리 연결 그림 -->
+        <svg class="ladder-svg" viewBox="0 0 300 110" preserveAspectRatio="none">
+          <line x1="50" y1="8" x2="50" y2="102" stroke="#94a3b8" stroke-width="4" stroke-linecap="round"/>
+          <line x1="150" y1="8" x2="150" y2="102" stroke="#94a3b8" stroke-width="4" stroke-linecap="round"/>
+          <line x1="250" y1="8" x2="250" y2="102" stroke="#94a3b8" stroke-width="4" stroke-linecap="round"/>
+          <line x1="50" y1="32" x2="150" y2="32" stroke="#94a3b8" stroke-width="4" stroke-linecap="round"/>
+          <line x1="150" y1="58" x2="250" y2="58" stroke="#94a3b8" stroke-width="4" stroke-linecap="round"/>
+          <line x1="50" y1="82" x2="150" y2="82" stroke="#94a3b8" stroke-width="4" stroke-linecap="round"/>
+          <polyline id="pathWater" points="50,8 50,32 150,32 150,58 250,58 250,102" fill="none" stroke="#0284c7" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" style="display:none;"/>
+          <polyline id="pathAir" points="150,8 150,32 50,32 50,82 150,82 150,102" fill="none" stroke="#0284c7" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" style="display:none;"/>
+          <polyline id="pathWood" points="250,8 250,58 150,58 150,82 50,82 50,102" fill="none" stroke="#0284c7" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" style="display:none;"/>
+        </svg>
+
+        <p class="step-label">② 사다리를 따라 도착한 물질의 상태를 선택하세요:</p>
+        <div class="ladder-grid" id="q4Bottom">
+          <button type="button" class="ladder-node" data-val="고체">고체</button>
+          <button type="button" class="ladder-node" data-val="액체">액체</button>
+          <button type="button" class="ladder-node" data-val="기체">기체</button>
+        </div>
+      </div>
+    </article>
+
+    <!-- 5번 문항 -->
+    <article class="q-card">
+      <div class="q-header">
+        <div class="q-num-wrap">
+          <span class="q-num">5</span>
+          <span class="q-tag">과학 글쓰기 · 과학적 의사 결정</span>
+        </div>
+        <span class="q-page">교과서 70쪽~71쪽</span>
+      </div>
+      <p class="q-title">그림에서 소음이 발생하는 상황을 한 가지 고르고, 소음을 줄이는 방법을 안내하는 글을 써 봅시다.</p>
+
+      <div class="situation-grid" id="q5Situations">
+        <button type="button" class="sit-card" data-sit="세탁기 소리">
+          <span class="sit-emoji">🧺</span>
+          <span>세탁기 소리</span>
+        </button>
+        <button type="button" class="sit-card" data-sit="자동차의 경적 소리">
+          <span class="sit-emoji">🚗</span>
+          <span>자동차의 경적 소리</span>
+        </button>
+        <button type="button" class="sit-card" data-sit="공사장 소리">
+          <span class="sit-emoji">🚧</span>
+          <span>공사장 소리</span>
+        </button>
+      </div>
+
+      <div class="writing-box">
+        <p>[근거 밝히기] 내가 <span id="selectedSitText" class="inline-tag">(위에서 선택)</span> 을/를 고른 까닭은</p>
+        <textarea id="q5Reason" placeholder="예: 공사하는 소리가 너무 커서 공사장 근처에서 대화하거나 노래를 들을 때 방해가 되기 때문이다."></textarea>
+      </div>
+
+      <div class="writing-box" style="margin-bottom: 0;">
+        <p>[글쓰기] 일상생활에서 소음을 줄이는 방법을 안내합니다</p>
+        <textarea id="q5Essay" placeholder="선택한 상황의 소음을 줄이는 방법을 자유롭게 써 봅시다."></textarea>
+      </div>
+    </article>
+
+    <!-- 제출 버튼 -->
+    <div class="submit-area">
+      <button type="button" class="btn-submit" id="submitBtn">제출 및 채점하기</button>
+    </div>
+
+    <!-- 제출 결과 화면 -->
+    <section id="resultPanel" aria-live="polite">
+      <div class="score-banner">
+        <h2 id="scoreTitle">채점 결과</h2>
+        <p id="studentSummary"></p>
+        <div id="dbStatusBadge" class="db-status"></div>
+      </div>
+      <div id="feedbackList"></div>
+      <div class="action-btns">
+        <button type="button" class="btn-secondary" id="downloadCsvBtn">📥 결과 CSV 다운로드</button>
+        <button type="button" class="btn-secondary" onclick="window.print()">🖨️ 결과 화면 인쇄 / PDF 저장</button>
+      </div>
+    </section>
+  </div>
+
+  <!-- 1. UI 인터랙션 및 채점 로직 (일반 스크립트로 분리하여 로컬/오프라인에서도 100% 작동) -->
+  <script>
+    const state = {
+      q2: '',
+      q3: '',
+      q4Top: '',
+      q4Bottom: '',
+      q5Sit: ''
+    };
+
+    // 2번 선택
+    document.querySelectorAll('#q2Choices .choice-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('#q2Choices .choice-btn').forEach(b => b.classList.remove('selected'));
+        btn.classList.add('selected');
+        state.q2 = btn.dataset.val;
+      });
+    });
+
+    // 3번 칼림바 선택
+    function selectKalimba(val) {
+      state.q3 = val;
+      document.querySelectorAll('.k-btn').forEach(b => b.classList.toggle('selected', b.dataset.val === val));
+      document.querySelectorAll('.tine.target').forEach(t => t.classList.toggle('active', t.dataset.val === val));
+    }
+
+    document.querySelectorAll('.k-btn, .tine.target').forEach(el => {
+      el.addEventListener('click', () => selectKalimba(el.dataset.val));
+    });
+
+    // 4번 사다리타기 상단 선택
+    document.querySelectorAll('#q4Top .ladder-node').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('#q4Top .ladder-node').forEach(b => b.classList.remove('selected'));
+        btn.classList.add('selected');
+        state.q4Top = btn.dataset.top;
+
+        document.getElementById('pathWater').style.display = state.q4Top === '물' ? 'block' : 'none';
+        document.getElementById('pathAir').style.display = state.q4Top === '공기' ? 'block' : 'none';
+        document.getElementById('pathWood').style.display = state.q4Top === '나무' ? 'block' : 'none';
+      });
+    });
+
+    // 4번 사다리타기 하단 선택
+    document.querySelectorAll('#q4Bottom .ladder-node').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('#q4Bottom .ladder-node').forEach(b => b.classList.remove('selected'));
+        btn.classList.add('selected');
+        state.q4Bottom = btn.dataset.val;
+      });
+    });
+
+    // 5번 상황 선택
+    document.querySelectorAll('#q5Situations .sit-card').forEach(card => {
+      card.addEventListener('click', () => {
+        document.querySelectorAll('#q5Situations .sit-card').forEach(c => c.classList.remove('selected'));
+        card.classList.add('selected');
+        state.q5Sit = card.dataset.sit;
+        document.getElementById('selectedSitText').textContent = state.q5Sit;
+      });
+    });
+
+    // 제출 및 채점 실행
+    const submitBtn = document.getElementById('submitBtn');
+    submitBtn.addEventListener('click', async () => {
+      const grade = document.getElementById('stGrade').value.trim();
+      const cls = document.getElementById('stClass').value.trim();
+      const num = document.getElementById('stNumber').value.trim();
+      const name = document.getElementById('stName').value.trim();
+
+      if (!name) {
+        alert('이름을 먼저 입력해 주세요!');
+        document.getElementById('stName').focus();
+        return;
+      }
+
+      const q1Ans = document.getElementById('q1Input').value.trim();
+      const q5Reason = document.getElementById('q5Reason').value.trim();
+      const q5Essay = document.getElementById('q5Essay').value.trim();
+
+      const isQ1Correct = q1Ans === '떨림' || q1Ans === '진동';
+      const isQ2Correct = state.q2 === '㉢';
+      const isQ3Correct = state.q3 === '㉡';
+      const isQ4Correct = state.q4Bottom === '액체';
+      const correctCount = [isQ1Correct, isQ2Correct, isQ3Correct, isQ4Correct].filter(Boolean).length;
+
+      submitBtn.disabled = true;
+      submitBtn.textContent = '제출 및 DB 저장 중...';
+
+      const dbStatusBadge = document.getElementById('dbStatusBadge');
+      const payload = {
+        grade: grade,
+        classNum: cls,
+        studentNumber: num,
+        studentName: name,
+        answers: {
+          q1: q1Ans,
+          q2: state.q2,
+          q3: state.q3,
+          q4_material: state.q4Top,
+          q4_state: state.q4Bottom,
+          q5_situation: state.q5Sit,
+          q5_reason: q5Reason,
+          q5_essay: q5Essay
+        },
+        grading: {
+          q1Correct: isQ1Correct,
+          q2Correct: isQ2Correct,
+          q3Correct: isQ3Correct,
+          q4Correct: isQ4Correct,
+          score: correctCount,
+          totalObjective: 4
+        }
+      };
+
+      // Firebase 모듈이 정상 로드되었으면 DB에 저장
+      if (window.saveAssessmentToDB) {
+        try {
+          const docId = await window.saveAssessmentToDB(payload);
+          dbStatusBadge.className = 'db-status success';
+          dbStatusBadge.textContent = `✅ 서버(DB)에 안전하게 저장되었습니다. (문서 ID: ${docId.slice(0, 8)}...)`;
+        } catch (error) {
+          console.error('Firestore 저장 오류:', error);
+          dbStatusBadge.className = 'db-status error';
+          dbStatusBadge.textContent = `⚠️ DB 저장 오류: ${error.code || error.message}`;
+        }
+      } else {
+        dbStatusBadge.className = 'db-status error';
+        dbStatusBadge.textContent = '⚠️ 로컬 파일(file://)로 열려 DB 연결이 대기 상태입니다. GitHub Pages 주소로 접속하면 DB에 자동 저장됩니다.';
+      }
+
+      submitBtn.disabled = false;
+      submitBtn.textContent = '다시 제출하기';
+
+      document.getElementById('scoreTitle').textContent = `기본 문항(1~4번) ${correctCount} / 4개 정답!`;
+      document.getElementById('studentSummary').textContent = `${grade}학년 ${cls || '-'}반 ${num || '-'}번 ${name} 학생 제출 완료`;
+
+      const feedbackHTML = `
+        <div class="feedback-item ${isQ1Correct ? 'correct' : 'wrong'}">
+          <strong>1번 (${isQ1Correct ? '정답 ⭕' : '오답 ❌'})</strong> — 내 답: <strong>${q1Ans || '(미입력)'}</strong> / 정답: <strong>떨림</strong><br>
+          <small>해설: 물체에서 소리가 날 때에는 물체가 떨립니다.</small>
+        </div>
+        <div class="feedback-item ${isQ2Correct ? 'correct' : 'wrong'}">
+          <strong>2번 (${isQ2Correct ? '정답 ⭕' : '오답 ❌'})</strong> — 내 답: <strong>${state.q2 || '(미선택)'}</strong> / 정답: <strong>㉢</strong><br>
+          <small>해설: 작은북을 세게 치면 큰 소리가 나고, 약하게 치면 북면이 작게 떨리면서 작은 소리가 납니다.</small>
+        </div>
+        <div class="feedback-item ${isQ3Correct ? 'correct' : 'wrong'}">
+          <strong>3번 (${isQ3Correct ? '정답 ⭕' : '오답 ❌'})</strong> — 내 답: <strong>${state.q3 || '(미선택)'}</strong> / 정답: <strong>㉡</strong><br>
+          <small>해설: 칼림바는 음판의 길이가 길수록 낮은 소리가 나므로 가장 긴 음판인 ㉡을 연주해야 합니다.</small>
+        </div>
+        <div class="feedback-item ${isQ4Correct ? 'correct' : 'wrong'}">
+          <strong>4번 (${isQ4Correct ? '정답 ⭕' : '오답 ❌'})</strong> — 내 답: <strong>${state.q4Bottom || '(미선택)'}</strong> / 정답: <strong>액체</strong><br>
+          <small>해설: 바닷속에서 소리를 전달하는 물질은 '물'이며, 물은 '액체' 상태의 물질입니다.</small>
+        </div>
+        <div class="feedback-item essay">
+          <strong>5번 과학 글쓰기 (제출 완료 📝)</strong><br>
+          <p style="margin-top:6px;"><strong>• 선택한 상황:</strong> ${state.q5Sit || '(미선택)'}</p>
+          <p><strong>• 고른 까닭:</strong> ${q5Reason || '(미입력)'}</p>
+          <p><strong>• 안내하는 글:</strong> ${q5Essay || '(미입력)'}</p>
+          <hr style="margin:10px 0; border:none; border-top:1px dashed #d97706;">
+          <small><strong>[예시 답안]</strong> 공사장 소리를 고른 까닭: 공사하는 소리가 너무 커서 공사장 근처에서 대화하거나 노래를 들을 때 방해가 되기 때문이다. / 줄이는 방법: 공사장 주위에 방음벽을 설치하여 공사장 소리가 잘 전달되지 않도록 하면 소음을 줄일 수 있다.</small>
+        </div>
+      `;
+
+      document.getElementById('feedbackList').innerHTML = feedbackHTML;
+      const panel = document.getElementById('resultPanel');
+      panel.style.display = 'block';
+      panel.scrollIntoView({ behavior: 'smooth' });
+    });
+
+    // CSV 다운로드 기능
+    document.getElementById('downloadCsvBtn').addEventListener('click', () => {
+      const grade = document.getElementById('stGrade').value.trim();
+      const cls = document.getElementById('stClass').value.trim();
+      const num = document.getElementById('stNumber').value.trim();
+      const name = document.getElementById('stName').value.trim();
+      const q1Ans = document.getElementById('q1Input').value.trim();
+      const q5Reason = document.getElementById('q5Reason').value.trim().replace(/"/g, '""');
+      const q5Essay = document.getElementById('q5Essay').value.trim().replace(/"/g, '""');
+
+      const header = ['학년', '반', '번호', '이름', '1번답', '2번답', '3번답', '4번답', '5번상황', '5번까닭', '5번글쓰기'];
+      const row = [grade, cls, num, name, q1Ans, state.q2, state.q3, state.q4Bottom, state.q5Sit, `"${q5Reason}"`, `"${q5Essay}"`];
+
+      const csvContent = '\uFEFF' + header.join(',') + '\n' + row.join(',');
+      const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `${grade}학년_${cls}반_${num}번_${name}_소리의성질_평가결과.csv`;
+      a.click();
+      URL.revokeObjectURL(url);
+    });
+  </script>
+
+  <!-- 2. Firebase 모듈 스크립트 (안정 최신 SDK 11.0.2 버전 사용) -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-app.js";
+    import { getFirestore, collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-firestore.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyBpWsZXYUUci5tV1zYZM17pfA1C-ie7GJY",
+      authDomain: "project-4253641394279013711.firebaseapp.com",
+      projectId: "project-4253641394279013711",
+      storageBucket: "project-4253641394279013711.firebasestorage.app",
+      messagingSenderId: "872290753397",
+      appId: "1:872290753397:web:d5985aea76baa37a45113c",
+      measurementId: "G-SCXL3X074K"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+
+    window.saveAssessmentToDB = async function(payload) {
+      const docRef = await addDoc(collection(db, "sound_assessments"), {
+        ...payload,
+        submittedAt: serverTimestamp()
+      });
+      return docRef.id;
+    };
+  </script>
+</body>
+</html>
